@@ -31,7 +31,7 @@ services:
       context: ../service-registry
       dockerfile: src/main/docker/local/Dockerfile
     environment:
-      - SYHOS_PROFILE=localdocker
+      - MMNP_PROFILE=localdocker
     ports:
       - "8761:8761"
     depends_on:
