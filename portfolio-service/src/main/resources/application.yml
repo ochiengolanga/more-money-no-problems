@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        loanapplication-approved:
+          destination: loanapplication-approved
+          contentType: application/json
+          group: portfolio-service
+        member-created:
+          destination: member-created
+          contentType: application/json
+          group: portfolio-service
+
+server:
+  port: 8014

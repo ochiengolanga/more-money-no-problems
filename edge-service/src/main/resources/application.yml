@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: members_route
+          uri: lb://members-service
+          predicates:
+          - Path=/members/**

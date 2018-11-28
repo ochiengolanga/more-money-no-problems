@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        loanapplication-created:
+          destination: loanapplication-created
+          contentType: application/json
+          group: analytics-service
+        loanapplication-approved:
+          destination: loanapplication-approved
+          contentType: application/json
+          group: analytics-service
+        loanapplication-declined:
+          destination: loanapplication-declined
+          contentType: application/json
+          group: analytics-service
+        member-created:
+          destination: member-created
+          contentType: application/json
+          group: analytics-service
+
+server:
+  port: 8011

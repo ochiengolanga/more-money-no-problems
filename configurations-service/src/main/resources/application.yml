@@ -1,0 +1,10 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${HOME}/IdeaProjects/my-projects/to-open-source/workshop-spring-boot-microservices/configurations-repo
+          clone-on-start: true

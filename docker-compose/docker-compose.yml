@@ -1,0 +1,55 @@
+version: '3'
+services:
+   postgres:
+     image: postgres:latest
+     container_name: momoney-postgres
+     environment:
+       - POSTGRES_USER=postgres
+       - POSTGRES_PASSWORD=postgres
+     ports:
+       - "5432:5432"
+     volumes:
+       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  kafka:
+    image: 'landoop/fast-data-dev'
+    container_name: momoney-kafka
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      momoney-network:
+        aliases:
+          - "momoney-kafka"
+
+  service-registry:
+    container_name: service-registry
+    build:
+      context: ../service-registry
+      dockerfile: src/main/docker/local/Dockerfile
+    environment:
+      - SYHOS_PROFILE=localdocker
+    ports:
+      - "8761:8761"
+    depends_on:
+      - configuration-service
+    networks:
+      momoney-network:
+        aliases:
+          - "service-registry"
+
+  edge-service:
+    container_name: edge-service
+    build: ./edge-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - configuration-service
+      - service-registry
+
+  networks:
+    momoney-network:
+      driver: bridge

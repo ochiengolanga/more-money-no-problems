@@ -1,0 +1,57 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.ochiengolanga.tuts.momoney'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+
+ext {
+    springBootAdminVersion = '2.1.1'
+    springCloudVersion = 'Greenwich.M3'
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-actuator')
+    implementation('org.springframework.boot:spring-boot-starter-cache')
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.apache.kafka:kafka-streams')
+    implementation('org.springframework.cloud:spring-cloud-starter-config')
+    implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+    implementation('org.springframework.cloud:spring-cloud-stream')
+    implementation('org.springframework.cloud:spring-cloud-stream-binder-kafka')
+    implementation('org.springframework.cloud:spring-cloud-stream-binder-kafka-streams')
+    implementation('org.springframework.kafka:spring-kafka')
+    runtimeOnly('org.springframework.boot:spring-boot-devtools')
+    runtimeOnly('org.postgresql:postgresql')
+    compileOnly('org.springframework.boot:spring-boot-configuration-processor')
+    compileOnly('org.projectlombok:lombok')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.cloud:spring-cloud-stream-test-support')
+    testImplementation('org.springframework.kafka:spring-kafka-test')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}

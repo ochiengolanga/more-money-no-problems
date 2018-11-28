@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        loanapplication-created:
+          destination: loanapplication-created
+          contentType: application/json
+          group: notifications-service
+        loanapplication-approved:
+          destination: loanapplication-approved
+          contentType: application/json
+          group: notifications-service
+        loanapplication-declined:
+          destination: loanapplication-declined
+          contentType: application/json
+          group: notifications-service
+        member-created:
+          destination: member-created
+          contentType: application/json
+          group: notifications-service
+
+server:
+  port: 8084

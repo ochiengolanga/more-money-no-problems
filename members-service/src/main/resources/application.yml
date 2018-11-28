@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        member-created:
+          destination: member-created
+          contentType: application/json
+
+server:
+  port: 8013
