@@ -8,7 +8,7 @@ Reference project / application for developing microservices
 Full adherence to The Twelve Factor App (https://12factor.net/)
 
 # Purpose
-Blueprint for any developer (not just Spring developers) who's interested in getting a reference application that adheres to 
+Blueprint for any developer (not just Spring developers) who's interested in getting a reference application that adheres to correctly building an application using Microservices as an architectural style also taking into consideration 12 factor app guidelines.
 
 # TODO
 * Security (OAuth2) implementation using Spring Security (https://oauth.net/2/)
