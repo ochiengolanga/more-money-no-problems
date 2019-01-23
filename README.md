@@ -25,5 +25,3 @@ Do you have a question or query on what you'd like to see implemented on this re
 
 # Feedback
 Please provide feedback! The goal is to make this project useful to many interested  as possible. Please email me ochiengolanga@gmail.com and point out what you do and don't like, or fork the project and make suggestions. No issue is too small. Once again Email today! Don't delay!
-
-# May the force be with you!
