@@ -16,7 +16,7 @@ Blueprint for any developer (not just Spring developers) who's interested in get
 * Fault tolerance Circuit breaker implementation using (Hystrix, Hystrix Dashboard and Turbine) (https://github.com/Netflix/Hystrix)
 * Metrics aggregation using Micrometer (https://micrometer.io/)
 * Log aggregation using the famous ELK stack (ElasticSearch Logstash Kibana) (https://www.elastic.co/elk-stack)
-* Cache using Redix (https://redis.io/documentation)
+* Cache using Redis (https://redis.io/documentation)
 * Streaming using Apache Kafka Streams (https://kafka.apache.org/documentation/streams/)
 * Full adherence to The Twelve Factor App (https://12factor.net/) methodology of developing, deploying, maintaining and troubleshooting
 
