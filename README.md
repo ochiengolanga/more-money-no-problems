@@ -1,4 +1,4 @@
-# workshop-spring-boot-microservices
+# More Money; No Problems
 "More Money No Problems" lending platform build using Java, Spring Boot 2 with polyglot persistence, Apache Kafka backplane and deployed using Docker (docker-compose)
 
 # TL;DR
